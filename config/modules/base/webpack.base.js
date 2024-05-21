@@ -27,8 +27,10 @@ module.exports = (options) => {
     },
     devtool: DetermineDevToolFromEnvironmentDebugMode(),
     output: {
-      libraryTarget: "commonjs2",
-      filename: "[name].js"
+      library: {
+        name: '[name].js',
+        type: 'umd',
+      },
     },
     plugins: [
       new CleanWebpackPlugin(),
